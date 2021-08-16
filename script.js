@@ -90,3 +90,11 @@ const chart3 = new ApexCharts(document.querySelector('#chart3'), options3);
  
 // render the chart
 chart3.render()
+
+window.addEventListener('DOMContentLoaded', async ()=>{
+    let series = await loadData();
+    chart.updateSeries([{
+        'name': 'Sales',
+        'data': series
+    }])
+})
