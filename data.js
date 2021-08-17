@@ -26,34 +26,6 @@ function transformData(rawData) {
   return series;
 }
 
-let data = loadData();
+// loadData()
+var data = loadData();
 console.log(data);
-// // Chart 3
-// const options3 =  {
-//   chart: {
-//       type: 'line',
-//       height:"100%"
-//   },
-//   series:[
-      
-//   ],
-//   noData: {
-//       "text": "Loading..."
-//   }
- 
-  
-// }
-
-// // create the chart
-// const chart3 = new ApexCharts(document.querySelector('#chart3'), options3);
-
-// // render the chart
-// chart3.render()
-
-// window.addEventListener('DOMContentLoaded', async ()=>{
-//   let series = await loadData();
-//   chart3.updateSeries([{
-//       'name': 'Sales',
-//       'data': series
-//   }])
-// })
