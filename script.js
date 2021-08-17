@@ -229,23 +229,23 @@ function generateDayWiseTimeSeries(s, count) {
 
 // Chart 3
 
-// const options3 =  {
-//   chart: {
-//       type: 'line',
-//       height:"100%"
-//   },
-//   series:[
+var options3 =  {
+  chart: {
+      type: 'line',
+      height:"100%"
+  },
+  series:[
       
-//   ],
-//   noData: {
-//       "text": "Loading..."
-//   }
+  ],
+  noData: {
+      "text": "Loading..."
+  }
  
   
-// }
+}
 
-// // create the chart
-// const chart = new ApexCharts(document.querySelector('#chart3'), options3);
+// create the chart
+const chart3 = new ApexCharts(document.querySelector('#chart3'), options3);
 
-// // render the chart
-// chart3.render()
+// render the chart
+chart3.render()
