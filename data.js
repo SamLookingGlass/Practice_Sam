@@ -8,8 +8,7 @@ async function loadData() {
     return transformData(json);
 }
 
-
-// Transform json into time series
+// Transform json into series
 function transformData(rawData) {
   // transform into x and y
   let series = [];
@@ -36,8 +35,26 @@ async function getValues(value) {
     return element[myvalue]
   })
   // console.log(data)
-  console.log(list_x); 
+  // console.log(list_x); 
+  return list_x
 }
 
-getValues('country')
 
+// (async() => {
+//   var response_x =  await getValues('country'); // This is async.
+//   console.log(response_x);
+// })();
+
+// window.addEventListener(
+//   'DOMContentLoaded', async ()=>{
+//     async() => {
+//       var response_x =  await getValues('country'); 
+//       var response_y = await getValues('total_map');
+//       console.log(response_x,response_y);
+//       chart3.updateSeries([{
+//       'name': 'Crude Birth Rates',
+//       'data': response_x
+//       }])
+//     }
+//   }
+// )
