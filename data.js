@@ -8,6 +8,7 @@ async function loadData() {
     return transformData(json);
 }
 
+
 // Transform json into time series
 function transformData(rawData) {
   // transform into x and y
@@ -26,6 +27,17 @@ function transformData(rawData) {
   return series;
 }
 
-// loadData()
-var data = loadData();
-console.log(data);
+
+// Function to list of values with specified key
+async function getValues(value) {
+  var myvalue = value;
+  var data = await loadData();
+  var list_x = data.map(function(element) {
+    return element[myvalue]
+  })
+  // console.log(data)
+  console.log(list_x); 
+}
+
+getValues('country')
+
