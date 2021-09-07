@@ -45,16 +45,51 @@ async function getValues(value) {
 //   console.log(response_x);
 // })();
 
-window.addEventListener(
-  'DOMContentLoaded', async ()=>{
-    async() => {
-      var response_x =  await getValues('country'); 
-      var response_y = await getValues('total_map');
-      console.log(response_x,response_y);
-      chart3.updateSeries([{
-      'name': 'Crude Birth Rates',
-      'data': response_x
-      }])
+// window.addEventListener(
+//   'DOMContentLoaded', async ()=>{
+//     async() => {
+//       var response_x =  await getValues('country'); 
+//       var response_y = await getValues('total_map');
+//       console.log(response_x,response_y);
+//       chart3.updateSeries([{
+//       'name': 'Crude Birth Rates',
+//       'data': response_x
+//       }])
+//     }
+//   }
+// )
+
+// Mapping out certain keys
+async function test() {
+  let json =  await csv().fromFile(csvFilePath)
+  let arrayX = json.map(function(json) {
+    return {
+      location: json.location,
+      date: new Date(json.date)
     }
-  }
-)
+  })
+  console.log(arrayX)
+}
+
+// test()
+
+// Filter conditions
+async function test1() {
+  let json =  await csv().fromFile(csvFilePath)
+  let arrayX = json.map(function(json) {
+    return {
+      location: json.location,
+      date: new Date(json.date),
+      year: new Date(json.date).getFullYear(),
+      month: new Date(json.date).getMonth() + 1,
+      day: new Date(json.date).getDay()
+    }
+  })
+  let filtered = arrayX.filter(function(datnum) {
+    // return datnum.date.getFullYear() == 2020;
+    return datnum.location == 'Germany'
+  })
+  console.log(filtered)
+}
+
+test1()
